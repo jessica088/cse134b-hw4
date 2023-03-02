@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.js"></script>
+</head>
+
+<body>
+    <button id="alert">
+        Alert
+    </button>
+    <button id="confirm">
+        Confirm
+    </button>
+    <button id="prompt">
+        Prompt
+    </button>
+    <button id="saferPrompt">
+        Safer Prompt
+    </button>
+
+    <output id="buttonOutput">
+    </output>
+
+    <script>
+        const buttonOutput = document.getElementById("buttonOutput");
+
+        const alertButton = document.getElementById("alert");
+        alertButton.addEventListener("click", () => {
+            window.alert("beep-boop-beep");    
+        });
+
+        const confirmButton = document.getElementById("confirm");
+        confirmButton.addEventListener("click", () =>{
+            buttonOutput.textContent = ""
+            setTimeout(() => {
+                let confimed = window.confirm("Would you please confirm me?");
+                buttonOutput.textContent = `The value returned by the confirm method is : ${confimed}`;
+            }, 0)
+        });
+
+        const promptButton = document.getElementById("prompt");
+        promptButton.addEventListener("click", () =>{
+            buttonOutput.textContent = ""
+            setTimeout(() => {
+                let result = window.prompt("Whats your boba order?");
+                if(result == null || result == ""){
+                    buttonOutput.innerHTML = "User didn’t enter anything";
+                }
+                else{
+                    buttonOutput.innerHTML = `Prompt result is : ${result}`;
+                }
+            }, 0)
+        });
+
+        const safePromptButton = document.getElementById("saferPrompt");
+        safePromptButton.addEventListener("click", () =>{
+            buttonOutput.textContent = ""
+            setTimeout(() => {
+                let result = window.prompt("Whats your boba order?");
+                if(result == null || result == ""){
+                    buttonOutput.innerHTML = "User didn’t enter anything";
+                }
+                else{
+                    let cleanResult = DOMPurify.sanitize(result);
+                    console.log(cleanResult);
+                    buttonOutput.innerHTML = `Prompt result is : ${cleanResult}`;
+                }
+            }, 0)
+        });
+    </script>
+</body>
+
+</html>
