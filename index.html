@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="images/favicon.ico" rel="icon">
+    <link href="./styles/main.css" rel="stylesheet">
+    <title>Jessica Inthasane</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="menu">
+                <a href="#About_me">
+                    About me
+                </a>
+                <a href="#Experience">
+                    Experience
+                </a>
+                <a href="#Contact">
+                    Contact
+                </a>
+                <a href="#Resume">
+                    Resume
+                </a>
+            </div>
+        </nav>
+        <input id="burger-toggle" type="checkbox" />
+        <div id="burger">
+            <span id="line-1"></span>
+            <span id="line-2"></span>
+            <span id="line-3"></span>
+        </div>
+        <div id="burger-menu">
+            <a href="#About_me">
+                About me
+            </a>
+            <a href="#Experience">
+                Experience
+            </a>
+            <a href="#Contact">
+                Contact
+            </a>
+            <a href="#Resume">
+                Resume
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1>Hi, my name is Jessica Inthasane</h1>
+        <picture>
+            <source height="200" srcset="images/IMG_0454.webp">
+            <img height="200" width="200" src="images/IMG_0454.JPG" alt="photo of Jessica">
+        </picture>
+
+        <h2 id="About_me">About me</h2>
+        <p>I am a computer science student studying at UCSD</p>
+
+        <details>
+            <summary>Interests</summary>
+            <ul>
+                <li>
+                    Digital Art
+                </li>
+                <li>
+                    Crocheting
+                </li>
+                <li>
+                    Video Games
+                </li>
+            </ul>
+        </details>
+        <details>
+            <summary>Skills</summary>
+            <ol>
+                <li>
+                    Software Development
+                </li>
+                <li>
+                    Data Analysis
+                </li>
+                <li>
+                    Wireframing
+                </li>
+            </ol>
+        </details>
+        <h2 id="Experience">Experience</h2>
+        <h3>School Work</h3>
+        <table>
+            <caption>UCSD assignments from 2020-2023</caption>
+            <colgroup>
+                <col span="4">
+                <col span="1">
+            </colgroup>
+            <tr id="table-header">
+                <th></th>
+                <th scope="col">Course</th>
+                <th scope="col">Course Description</th>
+                <th scope="col">Quarter Taken</th>
+                <th scope="col">Skills Developed</th>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td> CSE 110</td>
+                <td> Software Development</td>
+                <td> Winter 2022</td>
+                <td><a href="https://github.com/CSE-110-Spring-2022/zooseeker-cse-110-team-46"></a>Zooseeker app</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td> CSE 108</td>
+                <td> Data Science</td>
+                <td> Fall 2021</td>
+                <td> <a href="https://github.com/COGS108/Group003-Wi22"></a>Crunch culture</td>
+            </tr>
+        </table>
+        <h3>Volunteering</h3>
+        <picture>
+            <source height="300" srcset="images/HammerRobot.webp">
+            <img src="images/HammerRobot.png" alt="Robotics team logo where Jessica volunteered">
+        </picture>
+        <p>
+            I volunteered as a mentor for a junior robotics teams in a program called fll. I worked as their driving
+            coach teaching them about communication and cooperation by guiding after running their robot how to debug
+            their problems together.
+        </p>
+        <h3>Startup Work</h3>
+        <picture>
+            <source height="300" srcset="images/prolypmia-homepage.webp">
+            <img height="300" src="images/prolypmia-homepage.webp" alt="screenshot of sports app home page">
+        </picture>
+        <p>
+            I work as a developer for a mobile sports app that helps users find other people to play sports games with.
+            Using react native I work on the front end development of multiple features including the profile screen and
+            Tournament features.
+        </p>
+        <h2 id="Contact">Contact</h2>
+        <form method="post">
+            <fieldset>
+                <legend>Send me a message!</legend>
+                <div>
+                    <label for="name">Enter your name: </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Enter your email: </label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="message">Enter your message: </label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </fieldset>
+        </form>
+        <h2 id="Resume">Resume</h2>
+        <iframe src="https://docs.google.com/document/d/18c5vY-Q6cHP-4BUmp5pjGryl0g3iVXBjNSP9sGeh0QE/edit?usp=sharing"
+            height="800" width="90%">
+        </iframe>
+    </main>
+    <footer>
+        <p>Created by Jessica Inthasane</p>
+    </footer>
+</body>
+
+</html>
