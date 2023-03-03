@@ -1,3 +1,4 @@
+import "./node_modules/dompurify/dist/purify.js";
 
 export function CUSTOM_showAlert() {
     const alertButton = document.getElementById("alert");
@@ -43,7 +44,7 @@ export function CUSTOM_showPrompt(){
                         buttonOutput.innerHTML = "User didn’t enter anything";
                     }
                     else{
-                        buttonOutput.innerHTML = `Prompt result is : ${userInput}`;
+                        buttonOutput.innerHTML = `Prompt result is : ${DOMPurify.sanitize(userInput)}`;
                     }
             })
         }, 0) 

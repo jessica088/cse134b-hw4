@@ -163,6 +163,20 @@
     <footer>
         <p>Created by Jessica Inthasane</p>
     </footer>
+    <span id="totop">^</span>
+    <script>
+        var toTop = document.querySelector("#totop");
+        document.addEventListener("scroll", () => {
+            if (window.scrollY === 0) {
+                toTop.style.display = "none";
+            } else if (window.scrollY > 10) {
+                toTop.style.display = "flex";
+            }
+        });
+        toTop.addEventListener("click", () => {
+            window.scroll({top: 0, left: 0, behavior: 'smooth'});
+        })
+    </script>
 </body>
 
 </html>
