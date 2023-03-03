@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <link href="./styles/crud.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title> Blog </title>
+    <script type="module">
+        import {addItem, listItems} from './styledposts.js';
+        addItem();
+        listItems();
+    </script>
+</head>
+
+<body>
+    <script type="module">
+        import {deleteItem, editItem} from './styledposts.js';
+        window.editItem = editItem;
+        window.deleteItem = deleteItem;
+    </script>
+    <main>
+        <h1>
+            Blog posts
+        </h1>
+
+        <dialog id = "userInputDia" >
+            <p>Enter Post Information</p>
+            <form method="dialog" id="userInputFrm">
+            <div>
+                <label> Post Title</label>
+                <input type="text" id="postTitleIn" name="title" >
+            </div>
+            <div>
+                <label> Post Date </label>
+                <input type="date" id="postDateIn" name="date" >
+            </div>
+            <div>
+                <label> Post Summary </label>
+                <input type="text" id="postSummaryIn" name="summary" >
+            </div>
+              <button value=false>Cancel</button>
+              
+            </form>
+        </dialog>
+
+        <ul id="postsList">
+        </ul>
+
+        <button id="addPostBtn">Add a post</button>
+
+    </main>
+
+</body>
+
+</html>

@@ -109,12 +109,12 @@ export function listItems() {
     let list = "";
     for (let i = 0; i < posts.length; i++) {
       list += "<li >";
-      list += posts[i].title + " " + posts[i].date + " " + posts[i].summary + " ";
+      list += "<p> <b>" + posts[i].title + "</b><br> " + posts[i].date + " <br>" + posts[i].summary + "</p>" ;
       list +=
-        "<span class='changeBtn' id='deleteBtn' onclick='deleteItem(" +
+        "<span class='material-icons' id='deleteBtn' onclick='deleteItem(" +
         i +
         ")'> delete </span>" +
-        "<span class='changeBtn' id='editBtn' onclick='editItem(" +
+        "<span class='material-icons' id='editBtn' onclick='editItem(" +
         i +
         ")'>edit</span></li>";
     }
