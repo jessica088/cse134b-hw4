@@ -1,0 +1,89 @@
+:root {
+    --bg-color: #d5def5;
+    --main-color: #8594e4;
+    --secondary-color: #8b6cd2;
+    --contrast-color: #430f58;
+    --contrast-light-color: #d0c6fd;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url(./fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf);
+}
+
+* {
+    font-family: 'Comfortaa', sans-serif;
+    overflow-x: hidden;
+    font-size: 12pt;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+h1 {
+    text-align: center;
+    padding-top: 36px;
+    font-size: 2.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 150px; 
+    overflow: hidden;
+    width: 150%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: var(--contrast-light-color);
+}
+b{
+    color: #430f58;
+    font-size: 15pt;
+}
+
+li span{
+    margin-left: 20px;
+    color: var(--secondary-color);
+}
+dialog{
+    background-color: var(--bg-color);
+    border-style:double;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: var(--contrast-color);
+    font-size: 1.5rem;
+
+}
+button{
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: var(--contrast-color);
+    color: white;
+    border-radius: 5px;
+}
+
+#addPostBtn{
+    padding: 20px;
+    width: 250px;
+    background-color: var(--secondary-color);
+}
