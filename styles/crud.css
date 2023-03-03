@@ -64,6 +64,7 @@ b{
 li span{
     margin-left: 20px;
     color: var(--secondary-color);
+    cursor: pointer;
 }
 dialog{
     background-color: var(--bg-color);
@@ -80,6 +81,7 @@ button{
     background-color: var(--contrast-color);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #addPostBtn{
