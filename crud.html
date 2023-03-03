@@ -15,13 +15,15 @@
 <body>
     <script type="module">
         import {deleteItem, editItem} from './blog.js';
+        window.editItem = editItem;
+        window.deleteItem = deleteItem;
     </script>
     <main>
         <h1>
             Blog posts
         </h1>
 
-        <dialog id = userInputDia >
+        <dialog id = "userInputDia" >
             <p>Enter Post Information</p>
             <form method="dialog" id="userInputFrm">
             <div>

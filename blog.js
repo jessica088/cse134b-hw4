@@ -39,16 +39,15 @@ function post(){
     }
 }
 
-export function deleteItem(){
-    const deleteBtn = document.getElementById('deleteBtn');
-    deleteBtn.addEventListener("click", () =>{
-        posts.splice(index,1);
-        listItems();
-    })
+export function deleteItem(index){
+    console.log(index);
+    posts.splice(index,1);
+    listItems();
+    console.log(posts);
 }
 
 export function editItem(index){
-
+    console.log("hi", index)
 }
 
 export function listItems() {
@@ -57,8 +56,10 @@ export function listItems() {
       list += "<li >";
       list += posts[i].title + " " + posts[i].date + " " + posts[i].summary + " ";
       list +=
-        "<span id='deleteBtn'> delete </span>" +
-        "<span id='editBtn'' onclick='editItem(" +
+        "<span id='deleteBtn' onclick='deleteItem(" +
+        i +
+        ")'> delete </span>" +
+        "<span id='editBtn' onclick='editItem(" +
         i +
         ")'>edit</span></li>";
     }
