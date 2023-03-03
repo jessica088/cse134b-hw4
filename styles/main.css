@@ -31,7 +31,6 @@ h1 {
     animation-direction: normal;
     animation-iteration-count: 1;
     font-size: 2.5rem;
-
 }
 
 h3 {
@@ -49,12 +48,12 @@ h2 {
 
 @keyframes slide {
     from {
-        margin-top: 100%;
+        margin-left: 100%;
         width: 100%;
     }
 
     to {
-        margin-top: 0%;
+        margin-left: 0%;
         width: 100%;
     }
 }
@@ -78,6 +77,29 @@ p {
     background-color: var(--accent-color);
     margin: 2%;
     border-radius: 10px;
+    padding: 20px;
+    box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+div#profile {
+    display: flex;
+    margin: 50px 50px 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+div#profile h1 {
+    text-align: left;
+}
+
+div#profile div {
+    text-align: left;
     padding: 20px;
 }
 
@@ -146,6 +168,19 @@ fieldset button {
     margin-bottom: 24px;
 }
 
+summary {
+    cursor: pointer;
+    transition: 0.4s;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+summary:hover {
+    background-color: white;
+    color: var(--font-color);
+}
+
 details {
     width: 100%;
 }
@@ -180,6 +215,14 @@ details li:hover {
     background-color: #f1538d;
 }
 
+button[type="submit"] {
+    transition: 0.2s;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    color: var(--font-color);
+}
+
 header {
     background-color: var(--nav-color);
 }
@@ -200,6 +243,20 @@ header nav #menu {
 header a {
     text-decoration: none;
     color: var(--accent-color);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+header a:hover {
+    background-color: white;
+    color: var(--font-color);
+}
+
+header a:active {
+    transform: scale(0.9);
 }
 
 div#burger {
@@ -281,7 +338,7 @@ span#totop {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    background-color: var(--accent-color);
+    background-color: antiquewhite;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -293,15 +350,24 @@ span#totop {
     font-size: 40px;
     color: black;
     text-decoration: none;
-    box-shadow: 2px 2px;
+    box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
     transition: 0.1s;
     user-select: none;
     cursor: pointer;
-    border: 1px black solid;
 }
 
 span#totop:hover {
     color: #8C5DA169;
+}
+
+span#totop:active {
+    transform: scale(0.9);
 }
 
 /* computer */
