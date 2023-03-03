@@ -1,24 +1,38 @@
 
-export let posts =[]
+export let posts = JSON.parse(localStorage.getItem("blog-posts")) || [];
 
 export function addItem() {
     const addPostBtn = document.getElementById("addPostBtn");
-    const userInputDia = document.getElementById("userInputDia");
     const userInputFrm = document.getElementById("userInputFrm");
+    const userInputDia = document.getElementById("userInputDia");
+    const cancleBtn = document.querySelector("#userInputFrm button");
+
     addPostBtn.addEventListener("click", () =>{
+        const postBtn = "<button id='postBtn' value=truePost>Post</button>";
+        cancleBtn.insertAdjacentHTML("afterend",postBtn);
+        userInputFrm.reset();
+        document.getElementById("postDateIn").valueAsDate = new Date();
         userInputDia.showModal();
     });
     userInputDia.addEventListener("close",() =>
     {
-        if(userInputDia.returnValue == "true"){
-            post();
+        if(userInputDia.returnValue == "truePost"){
+            post(true, 0);
+            if(!!document.getElementById("postBtn")){
+                document.getElementById("postBtn").remove();
+            }
         }
-        console.log(posts)
+        else{
+            if(!!document.getElementById("postBtn")){
+                document.getElementById("postBtn").remove();
+            }
+        }
+        console.log(posts);
         listItems();
     });
 }
 
-function post(){
+function post(isNew, index){
     const postTitleIn = document.getElementById("postTitleIn");
     const postDateIn = document.getElementById("postDateIn");
     const postSummaryIn = document.getElementById("postSummaryIn");
@@ -26,28 +40,69 @@ function post(){
     console.log(postDateIn.value);
     console.log(postSummaryIn.value);
     if(postTitleIn.value == "" || postDateIn.value == "" || postSummaryIn.value==""){
-        alert("post is not filled properly")
+        alert("post is not filled properly");
         userInputDia.showModal();
     }
     else{
-        posts.push({
-            title:postTitleIn.value,
-            date:postDateIn.value,
-            summary:postSummaryIn.value
-        });
-        userInputFrm.reset();
+        if(isNew){
+            posts.push({
+                title:postTitleIn.value,
+                date:postDateIn.value,
+                summary:postSummaryIn.value
+            });
+            localStorage.setItem("blog-posts", JSON.stringify(posts));
+            
+        }
+        else{
+            posts[index] = {
+                title:postTitleIn.value,
+                date:postDateIn.value,
+                summary:postSummaryIn.value
+            };
+            localStorage.setItem("blog-posts", JSON.stringify(posts));  
+        }
     }
 }
 
 export function deleteItem(index){
     console.log(index);
     posts.splice(index,1);
+    localStorage.setItem("blog-posts", JSON.stringify(posts));
     listItems();
     console.log(posts);
 }
 
 export function editItem(index){
-    console.log("hi", index)
+    const userInputDia = document.getElementById("userInputDia");
+    const userInputFrm = document.getElementById("userInputFrm");
+    const userInputFrmElem = document.getElementById("userInputFrm").elements;
+    const cancleBtn = document.querySelector("#userInputFrm button");
+
+    const confimEditBtn = "<button id='confimEditBtn' value=trueEdit>Edit Post</button>";
+    cancleBtn.insertAdjacentHTML("afterend",confimEditBtn);
+
+    userInputFrmElem.namedItem("postTitleIn").value = posts[index].title;
+    userInputFrmElem.namedItem("postDateIn").value = posts[index].date;
+    userInputFrmElem.namedItem("postSummaryIn").value = posts[index].summary;
+
+    userInputDia.showModal();
+
+    userInputDia.addEventListener("close", () =>{
+        if(userInputDia.returnValue == "trueEdit"){
+            post(false, index);
+            if(!!document.getElementById("confimEditBtn")){
+                document.getElementById("confimEditBtn").remove();
+            }
+        }
+        else{
+            if(!!document.getElementById("confimEditBtn")){
+                document.getElementById("confimEditBtn").remove();
+            }
+        }
+        console.log(posts);
+        listItems();
+    })
+
 }
 
 export function listItems() {
