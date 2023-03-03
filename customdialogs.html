@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="node_modules/dompurify/dist/purify.js"></script>
+    <title>Press a button</title>
+</head>
+
+<body>
+    <button id="alert">
+        Alert
+    </button>
+    <button id="confirm">
+        Confirm
+    </button>
+    <button id="prompt">
+        Prompt
+    </button>
+
+    <output id="buttonOutput">
+    </output>
+
+    <dialog id = alertDialog >
+        <p>Alert</p>
+        <form method="dialog">
+          <button>OK</button>
+        </form>
+    </dialog>
+
+    <dialog id = confirmDialog >
+        <p>Confirm</p>
+        <form method="dialog">
+          <button value=false >Cancel</button>
+          <button value=true >Ok</button>
+        </form>
+    </dialog>
+
+    <dialog id = promptDialog>
+        <p>Prompt</p>
+        <form method="dialog" id="promptFrm">
+          <input type="text" id="userReply">
+          <button value=false>Cancel</button>
+          <button value=true>OK</button>
+        </form>
+    </dialog>
+    
+    <script type="module">
+        import {CUSTOM_showAlert, CUSTOM_showConfirm, CUSTOM_showPrompt} from './customdialog.js';
+        CUSTOM_showAlert();
+        CUSTOM_showConfirm();
+        CUSTOM_showPrompt();
+    </script>
+
+</body>
+
+</html>
